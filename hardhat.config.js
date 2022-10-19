@@ -85,6 +85,12 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
  module.exports = {
   solidity: "0.8.4",
+  settings: {
+    optimizer: {
+      enabled: true,
+      runs: 500
+    }
+  },
   networks: {
     goerli: {
       url: `https://eth-goerli.g.alchemy.com/v2/bKAcOsXTqHEINi8v0vhhgUIgRO3MyNPO`,
@@ -95,10 +101,10 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
       // chainId: 0
     },
   },
-  gasReporter: {
-    currency: 'CHF',
-    gasPrice: 21
-  },
+  // gasReporter: {
+  //   currency: 'CHF',
+  //   gasPrice: 21
+  // },
   // networks: {
     // goerli: {
     //   url: `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,

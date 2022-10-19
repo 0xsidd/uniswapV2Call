@@ -18,7 +18,9 @@
     "@openzeppelin/contracts": "^4.7.3",
     "@rari-capital/solmate": "^6.4.0",
     "big-number": "^2.0.0",
+    "chokidar": "^3.5.3",
     "ethereumjs-util": "^7.1.5",
-    "hardhat-gas-reporter": "^1.0.9"
+    "hardhat-gas-reporter": "^1.0.9",
+    "remixd": "^0.2.4"
   }
 }

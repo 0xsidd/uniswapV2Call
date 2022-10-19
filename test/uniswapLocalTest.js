@@ -113,15 +113,15 @@ describe("Token contract", function () {
             beforeEach(async()=>{
               signer = await ethers.getSigners();
 
-              lpTokenContract = new ethers.Contract(lpTokenAddress, lpTokenAbi,signer[0]);
+              // lpTokenContract = new ethers.Contract(lpTokenAddress, lpTokenAbi,signer[0]);
 
-              const GetInit = await ethers.getContractFactory("CalHash");
-              getInit = await GetInit.deploy();
+              // const GetInit = await ethers.getContractFactory("CalHash");
+              // getInit = await GetInit.deploy();
 
-              initHash = await getInit.connect(signer[0]).getInitHash();
+              // initHash = await getInit.connect(signer[0]).getInitHash();
 
-              const LpToken = await ethers.getContractFactory("UniswapV2ERC20");
-              lpToken = await LpToken.deploy();
+              // const LpToken = await ethers.getContractFactory("UniswapV2ERC20");
+              // lpToken = await LpToken.deploy();
 
               const WETH = await ethers.getContractFactory("WETH9");
               weth = await WETH.deploy();
@@ -129,8 +129,8 @@ describe("Token contract", function () {
               const UniswapV2Factory = await ethers.getContractFactory("UniswapV2Factory");
               uniswapV2Factory = await UniswapV2Factory.connect(signer[0]).deploy(signer[0].address);
 
-              const UniswapV2Pair = await ethers.getContractFactory("UniswapV2Pair");
-              uniswapV2Pair = await UniswapV2Pair.connect(signer[0]).deploy();
+              // const UniswapV2Pair = await ethers.getContractFactory("UniswapV2Pair");
+              // uniswapV2Pair = await UniswapV2Pair.connect(signer[0]).deploy();
       
               const UniswapV2Router = await ethers.getContractFactory("UniswapV2Router02");
               uniswapV2Router = await UniswapV2Router.connect(signer[0]).deploy(uniswapV2Factory.address,weth.address);
@@ -147,6 +147,7 @@ describe("Token contract", function () {
 
             describe("Functions",async()=>{
                 it.only("addliquidity function", async function () {
+                  console.log(initHash);
                   await tokenA.connect(signer[0]).approve(uniswapV2Router.address,TOKEN_A_AMOUNT);
                   await tokenB.connect(signer[0]).approve(uniswapV2Router.address,TOKEN_B_AMOUNT);
                   await uniswapV2Router.connect(signer[0]).addLiquidity(tokenA.address,tokenB.address,TOKEN_A_AMOUNT,TOKEN_B_AMOUNT,1,1,signer[0].address, 1764541741);
