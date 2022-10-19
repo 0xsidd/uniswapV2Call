@@ -3,7 +3,6 @@ pragma solidity ^0.8.4;
 
 import '../interfaces/IUniswapV2Pair.sol';
 import '../interfaces/IUniswapV2Factory.sol';
-import "hardhat/console.sol";
 import "./SafeMath.sol";
 
 library UniswapV2Library {

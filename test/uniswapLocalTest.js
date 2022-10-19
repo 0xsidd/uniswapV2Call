@@ -115,10 +115,10 @@ describe("Token contract", function () {
 
               // lpTokenContract = new ethers.Contract(lpTokenAddress, lpTokenAbi,signer[0]);
 
-              // const GetInit = await ethers.getContractFactory("CalHash");
-              // getInit = await GetInit.deploy();
+              const GetInit = await ethers.getContractFactory("CalHash");
+              getInit = await GetInit.deploy();
 
-              // initHash = await getInit.connect(signer[0]).getInitHash();
+              initHash = await getInit.connect(signer[0]).getInitHash();
 
               // const LpToken = await ethers.getContractFactory("UniswapV2ERC20");
               // lpToken = await LpToken.deploy();
