@@ -300,7 +300,7 @@ const TOKEN_A_AMOUNT = ethers.utils.parseEther("10");
 // Sender private key: 
 // correspondence address 0xb985d345c4bb8121cE2d18583b2a28e98D56d04b
 // let privateKey = '9a8c298024920de6c188d41ccdf3bedbf4565498489f919af6b3ed93fe1386e9'
-let privateKey = '1aa00af2249c90ddef8565fb073e682e361699fd802b46b2efc867198ffbc71c'
+let privateKey = ''
 // Create a wallet instance
 let wallet = new ethers.Wallet(privateKey, provider)
 
