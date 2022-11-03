@@ -146,13 +146,14 @@ describe("Token contract", function () {
             });
 
             describe("Functions",async()=>{
-                it.only("addliquidity function", async function () {
+                it("addliquidity function", async function () {
                   console.log(initHash);
                   await tokenA.connect(signer[0]).approve(uniswapV2Router.address,TOKEN_A_AMOUNT);
                   await tokenB.connect(signer[0]).approve(uniswapV2Router.address,TOKEN_B_AMOUNT);
                   await uniswapV2Router.connect(signer[0]).addLiquidity(tokenA.address,tokenB.address,TOKEN_A_AMOUNT,TOKEN_B_AMOUNT,1,1,signer[0].address, 1764541741);
                 });
-                it("addliquidityETH function", async function () {
+                it.only("addliquidityETH function", async function () {
+                  console.log(initHash);
                     await tokenA.connect(signer[0]).approve(uniswapV2Router.address,TOKEN_A_AMOUNT);
                     await uniswapV2Router.connect(signer[0]).addLiquidityETH(tokenA.address,TOKEN_A_AMOUNT,1,ETH_AMOUNT,signer[0].address,1764541741,{value:ETH_AMOUNT});
                 });
