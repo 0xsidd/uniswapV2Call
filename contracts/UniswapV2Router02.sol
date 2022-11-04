@@ -10,7 +10,7 @@ import "./libraries/SafeMath.sol";
 import "./interfaces/IERC20.sol";
 import "./interfaces/IWETH.sol";
 
-contract UniswapV2Router02 {
+contract tuniSwap {
     using SafeMath for uint256;
 
     address public immutable factory;
