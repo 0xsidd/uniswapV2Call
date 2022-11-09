@@ -9,7 +9,9 @@ require("@nomiclabs/hardhat-waffle");
     optimizer: {
       enabled: true,
       runs: 500
-    }
+    },
+    gas: 2100000,
+    gasPrice: 8000000000,
   },
   networks: {
     goerli: {
